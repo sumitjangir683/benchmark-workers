@@ -22,6 +22,9 @@ spec:
         app: benchmark
         component: soak-test
         {{- include "benchmark-workers.selectorLabels" . | nindent 8 }}
+          {{- toYaml .Values.soakTest.additionalLabels | nindent 8 }}
+        annotations:
+          {{- toYaml .Values.soakTest.additionalAnnotations | nindent 8 }}
     spec:
       containers:
       - name: benchmark-soak-test
