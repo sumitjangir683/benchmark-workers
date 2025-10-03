@@ -50,10 +50,8 @@ workers:
   replicaCount: 1
   # Resources configuration
   resources: {}
-  additionalLabels:
-    sidecar.istio.io/inject: "true"
-  additionalAnnotations:
-    proxy.istio.io/config: '{"holdApplicationUntilProxyStarts": true}'
+  additionalLabels: {}
+  additionalAnnotations: {}
 
     # limits:
     #   cpu: 1000m
@@ -88,10 +86,9 @@ soakTest:
     #   cpu: 200m
     #   memory: 256Mi
 
-  additionalLabels:
-    sidecar.istio.io/inject: "true"
-  additionalAnnotations:
-    proxy.istio.io/config: '{"holdApplicationUntilProxyStarts": true}'
+  additionalLabels: {}
+  additionalAnnotations: {}
+ 
 
 nodeSelector: {}
 tolerations: []
