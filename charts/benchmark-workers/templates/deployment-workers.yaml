@@ -22,11 +22,11 @@ spec:
         component: workers
         {{- include "benchmark-workers.selectorLabels" . | nindent 8 }}
         {{- with .Values.workers.additionalLabels }}
-        {{- toYaml . | nindent8 }}
+        {{- toYaml . | nindent 8 }}
         {{- end }}
       {{- with .Values.workers.additionalAnnotations }}
       annotations:
-        {{- toYaml . | nindent8 }}
+        {{- toYaml . | nindent 8 }}
       {{- end }}
     spec:
       containers:
