@@ -21,9 +21,13 @@ spec:
         app: benchmark
         component: workers
         {{- include "benchmark-workers.selectorLabels" . | nindent 8 }}
-          {{- toYaml .Values.workers.additionalLabels | nindent 8 }}
-        annotations:
-          {{- toYaml .Values.workers.additionalAnnotations | nindent 8 }}
+        {{- with .Values.workers.additionalLabels }}
+        {{- toYaml . | nindent8 }}
+        {{- end }}
+      {{- with .Values.workers.additionalAnnotations }}
+      annotations:
+        {{- toYaml . | nindent8 }}
+      {{- end }}
     spec:
       containers:
       - name: benchmark-workers
