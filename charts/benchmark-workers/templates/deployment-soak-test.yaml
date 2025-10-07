@@ -23,11 +23,11 @@ spec:
         component: soak-test
         {{- include "benchmark-workers.selectorLabels" . | nindent 8 }}
         {{- with .Values.soakTest.additionalLabels }}
-        {{- toYaml . | nindent8 }}
+        {{- toYaml . | nindent 8 }}
         {{- end }}
       {{- with .Values.soakTest.additionalAnnotations }}
       annotations:
-        {{- toYaml . | nindent8 }}
+        {{- toYaml . | nindent 8 }}
       {{- end }}
     spec:
       containers:
